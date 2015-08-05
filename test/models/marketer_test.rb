@@ -33,7 +33,7 @@ class MarketerTest < ActiveSupport::TestCase
         assert_not @marketer.valid?
     
     test "emil address should be unique" do
-        dup_marketer = @marketer.dup_marketer
+        dup_marketer = @marketer.dup
         dup_marketer.email = @marketer.email.upcase
         @marketer.save
         assert_not dup_marketer.valid?
