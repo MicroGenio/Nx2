@@ -14,11 +14,12 @@
         </div>
         
         <div class="col-lg-8 well">
-            <h4><%= link_to idea.name, "" %></h4>
+            <h4><%= link_to idea.name, idea_path(idea) %></h4>
             <p><%= idea.summary %></p>
             <p>
                 <span class='quiet'><small> <%= time_ago_in_words(idea.created_at) %> ago</small></span>
             </p>
         </div>
     </div>
+    <hr/> 
 <% end %>
