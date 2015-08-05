@@ -1,11 +1,18 @@
 require "test_helper"
 class IdeaTest < ActiveSupport::TestCase
     def setup
-        @idea = Idea.new(name: "the method.com", summary: "The Method.com is a web service that helps indevduals retain knollege in their own way.", description: "More importantly, the method.com teaches you how to use knowledge practically to grow socially and economically" )
+        @marketer = Marketer.create(marketername: "bob", email: "bob@example.com")
+        @idea = @marketer.ideas.build(name: "the method.com", summary: "The Method.com is a web service that helps indevduals retain knollege in their own way.", description: "More importantly, the method.com teaches you how to use knowledge practically to grow socially and economically" )
+        
     end
     
     test "idea should be valid" do
       assert @idea.valid?
+    end
+    
+    test "chef_id should be present" do
+      @idea.marketer_id = nil
+      assert_not @idea.valid?
     end
     
     test "name should be present" do

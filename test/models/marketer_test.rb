@@ -32,14 +32,14 @@ class MarketerTest < ActiveSupport::TestCase
         @marketer.email = "a" * 101 + "@example.com"
         assert_not @marketer.valid?
     
-    test "emil address should be unique" do
+    test "email address should be unique" do
         dup_marketer = @marketer.dup
         dup_marketer.email = @marketer.email.upcase
         @marketer.save
         assert_not dup_marketer.valid?
     end
     
-    test "email validation should accep valid addresses" do
+    test "email validation should accept valid addresses" do
         valid_addresses = %w[user@eee.com R_TDD-DS@ee.hello.org user@example.com first.last@eem.au laura+joe@monk.cm]
         valid_addresses.each do |va| 
             @marketer.email = va 
@@ -54,3 +54,6 @@ class MarketerTest < ActiveSupport::TestCase
             assert_not @marketer.valid?, '#{ia.inspect} should be invalid'
         end
     end
+    
+    
+end
