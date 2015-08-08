@@ -1,5 +1,5 @@
-$navbar-default-bg: #312312;
-$light-orange: #ff8c00;
+$navbar-default-bg: #7B9AC9;
+$light-orange: #4E5856;
 $navbar-default-color: $light-orange;
 
 @import "bootstrap-sprockets";
@@ -11,7 +11,7 @@ $navbar-default-color: $light-orange;
     float: left;
     margin-right: 10px;
     font-size: 2em;
-    color: #fff;
+    color: #4E5856;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
@@ -53,7 +53,7 @@ h2 {
     margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
-    coler: #777;
+    coler: #4E5856;
 }
 .left {
     text-align: left;
@@ -73,4 +73,8 @@ h2 {
 
 .gravater {
     border-radius: 10px;
+}
+
+.well {
+    background-color: #F5EFE3;
 }
