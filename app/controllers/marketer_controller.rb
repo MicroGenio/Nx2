@@ -35,7 +35,7 @@ class MarketerController < ApplicationController
   end
   
   def show
-    @recipes = @marketer.recipes.paginate(page: params[:page], per_page: 3)
+    @recipes = @marketer.ideas.paginate(page: params[:page], per_page: 3)
   end
   
   private
