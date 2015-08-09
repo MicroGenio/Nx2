@@ -11,6 +11,9 @@
         <div class="col-md-8">
             <%= link_to "Edit this Idea", edit_idea_path(@idea), class: "btn btn-success pull-right" %>
             <h3><%= @idea.summary %></h3>
+            <div class= "show_recipe">
+                <%= image_tag(@idea.picture.url, class: "gravater") if @idea.picture? %>
+            </div>
             <div class= "well">
                 <p>
                     <strong> Executive Summary:</strong>

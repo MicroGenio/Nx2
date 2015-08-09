@@ -16,12 +16,15 @@
         
         </div>
         
-        <div class="col-lg-8 well">
+        <div class="col-lg-6 well">
             <h4><%= link_to idea.name, idea_path(idea) %></h4>
             <p><%= idea.summary %></p>
             <p>
                 <span class='quiet'><small> <%= time_ago_in_words(idea.created_at) %> ago</small></span>
             </p>
+        </div>
+        <div class- "col-md-4">
+                <%= image_tag(idea.picture.url, size: "250x150", class: "gravatar") if idea.picture? %>
         </div>
     </div>
     <hr/> 
