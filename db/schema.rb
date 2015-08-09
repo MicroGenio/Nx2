@@ -28,5 +28,41 @@ ActiveRecord::Schema.define(version: 20150803172449) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+  
+  create_table "ingredients", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "likes", force: true do |t|
+    t.boolean  "like"
+    t.integer  "marketer_id"
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "idea_ingredients", force: true do |t|
+    t.integer "ingredient_id"
+    t.integer "idea_id"
+  end
+
+  create_table "idea_styles", force: true do |t|
+    t.integer "style_id"
+    t.integer "idea_id"
+  end
+  
+   create_table "reviews", force: true do |t|
+    t.text     "body"
+    t.integer  "marketer_id"
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "styles", force: true do |t|
+    t.string "name"
+  end
+
+
 
 end

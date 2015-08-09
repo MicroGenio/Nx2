@@ -19,7 +19,7 @@ $navbar-default-color: $light-orange;
 }
 
 #logo:hover {
-    color: white;
+    color: red;
     text-decoration: none;
 }
 
@@ -30,7 +30,7 @@ body {
 .nav_item {
     margin-left: 25px;
     float: left;
-    margin-top: 20px;
+    margin-top: 10px;
     
 }
 
@@ -77,4 +77,30 @@ h2 {
 
 .well {
     background-color: #F5EFE3;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
+input {
+  height: auto !important;
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.show_ideas {
+  margin: 10px 10px 10px 10px;
 }
