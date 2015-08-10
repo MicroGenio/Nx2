@@ -19,12 +19,12 @@ $navbar-default-color: $light-orange;
 }
 
 #logo:hover {
-    color: red;
+    color: blue;
     text-decoration: none;
 }
 
 body {
-        padding-top: 80px;
+        padding-top: 95px;
 }
 
 .nav_item {
@@ -105,3 +105,14 @@ span.picture {
   margin: 10px 10px 10px 10px;
 }
 
+.navbar-default {
+    background-color: #7E9855;
+    border-color: #B4B6FE;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #B4B6FE;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #B4B6FE;
+    color: #7B9AC9;
+}    
