@@ -5,12 +5,14 @@
 <p> TheMarketHub.com will help you fund and idea, build a following and market your idea out to the world!</p>
 <hr/>
 
+<%= will_paginate %>
+
 <% @ideas.each do |idea| %>
     <div class="row">
         
         <div class="col-md-2">
             <section class="marketer_info center">
-                <%= gravatar_for idea.marketer, size: 100%>
+                <%= link_to gravatar_for(idea.marketer, size: 100), marketer_path(idea.marketer) %>
                <h5>Marketer name: <%= idea.marketer.marketername %></h5>
             </section>
         
@@ -22,6 +24,14 @@
             <p>
                 <span class='quiet'><small> <%= time_ago_in_words(idea.created_at) %> ago</small></span>
             </p>
+            <div class="pull-right">
+        <%= link_to like_idea_path(idea, like: true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= idea.thumbs_up_total %>
+        <% end %> &nbsp&nbsp&nbsp&nbsp
+        <%= link_to like_idea_path(idea, like: false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= idea.thumbs_down_total %>
+        <% end %>
+      </div>
         </div>
         <div class- "col-md-4">
                 <%= image_tag(idea.picture.url, size: "250x150", class: "gravatar") if idea.picture? %>
@@ -29,3 +39,5 @@
     </div>
     <hr/> 
 <% end %>
+
+<%= will_paginate %>

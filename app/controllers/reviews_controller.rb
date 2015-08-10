@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :require_user, except: [:show]
     
     def create
-      @idea = Idea.find(params[:recipe_id])
+      @idea = Idea.find(params[:idea_id])
       @review = @idea.reviews.new(review_params)
       @review.marketer = current_user
       
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
   
   private
     def review_params
-      params.require(:review).permit(:recipe_id, :body, :chef_id)
+      params.require(:review).permit(:idea_id, :body, :marketer_id)
     end
   
 end

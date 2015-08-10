@@ -1,11 +1,11 @@
-<%= render 'shared/page_title', title: "All Chefs" %>
+<%= render 'shared/page_title', title: "All Marketers" %>
 
 <ul class="nav nav-tabs">
   <li>
-    <%= link_to "Recipes", recipes_path %>
+    <%= link_to "Ideas", ideas_path %>
   </li>
   <li class="active">
-    <%= link_to "Chefs", chefs_path %>
+    <%= link_to "Marketers", marketers_path %>
   </li>
 </ul>
 
@@ -15,12 +15,12 @@
   </div>
 </div>
 
-<% @chefs.each do |chef| %>
+<% @marketers.each do |marketer| %>
   <div class="row">
     <div class="col-md-4 col-md-offset-4 center">
-      <%= link_to gravatar_for(chef, size: 200), chef_path(chef) %>
+      <%= link_to gravatar_for(marketer, size: 200), marketer_path(marketer) %>
       <p>
-        <h5>Chef name: <%= chef.chefname %></h5>
+        <h5>Marketer name: <%= marketer.marketername %></h5>
       </p>
     </div>
   </div>

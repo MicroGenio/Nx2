@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "Chef: " + @chef.chefname %>
+<%= render 'shared/page_title', title: "Marketer: " + @marketer.marketername %>
 
 <div class="row">
   <div class="col-md-4 col-md-offset-4 center">
@@ -9,27 +9,27 @@
 
 <div class="row">
   <div class="col-md-4 col-md-offset-4 center">
-    <h3><em>Recipes:</em></h3>
-    <%= will_paginate @recipes %>
+    <h3><em>Ideas:</em></h3>
+    <%= will_paginate @ideas %>
   </div>
 </div>
 
-<% @recipes.each do |recipe| %>
+<% @ideas.each do |idea| %>
   <div class="row">
     <div class="col-lg-6 well col-lg-offset-3">
-      <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+      <h4><%= link_to idea.name, idea_path(idea) %></h4>
       <%= link_to "Edit this Idea", edit_idea_path(@idea), class: "btn btn-success pull-right" %>
-      <p><%= @recipe.summary %></p>
+      <p><%= @idea.summary %></p>
       <p>
-        <span class='quiet'><small> created: <%= time_ago_in_words(recipe.created_at) %> ago, </small></span>
-        <span class='quiet'><small> updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
+        <span class='quiet'><small> created: <%= time_ago_in_words(idea.created_at) %> ago, </small></span>
+        <span class='quiet'><small> updated: <%= time_ago_in_words(idea.updated_at) %> ago</small></span>
       </p>
       <div class="pull-right">
-        <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= recipe.thumbs_up_total %>
+        <%= link_to like_ideas_path(idea, like: true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= idea.thumbs_up_total %>
         <% end %> &nbsp&nbsp&nbsp&nbsp
-        <%= link_to like_recipe_path(recipe, like: false), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= recipe.thumbs_down_total %>
+        <%= link_to like_idea_path(idea, like: false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= idea.thumbs_down_total %>
         <% end %>
       </div>
     </div>
