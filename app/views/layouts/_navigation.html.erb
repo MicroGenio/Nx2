@@ -1,12 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <%= link_to "TheNexusHub", root_path, class: "btn btn-lg pull-left btn-default", id: "logo" %>
-    <ul class="nav_ul_item">
+   <div class="row">
+    <%= link_to "TheNexusHub", root_path, class: "btn btn-lg-1 btn-default", id: "logo" %>
+       <div class="row"> 
+          <ul class="nav_ul_item">
       <li class="dropdown">
-          <%= link_to '#', class: "btn btn-default btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>
+          <%= link_to '#', class: "btn btn col-md-offset-1 btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>
             Idea <b class="caret"></b>
           <% end %>
-          <ul class='dropdown-menu'>
+           <ul class='dropdown-menu'>
             <% Idea.all.each do |idea| %>
               <li><%= link_to idea.name, idea_path(idea) %> </li>
               <% end %>
@@ -18,38 +20,36 @@
                     <% end %>
                 </li>
               <% end %>
-          </ul>
+           </ul>
         </li>
-    </ul>
-    <ul class="nav_ul_item">
         <li class="dropdown">
-          <%= link_to '/ideas', class: "btn btn-default col-md-1 btn-default col-mid  dropdown-toggle", "data-toggle" => "dropdown" do %>
-            Methods <b class="caret"></b>
-          <% end %>
-          <ul class='dropdown-menu'>
-            <% Ingredient.all.each do |ingredient| %>
-              <li><%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
-              <% end %>
+             <%= link_to 'ideas', class: "btn btn-default col-md-offset-1 btn-default   dropdown-toggle", "data-toggle" => "dropdown" do %>
+               Methods <b class="caret"></b>
+             <% end %>
+           <ul class='dropdown-menu'>
+              <% Ingredient.all.each do |ingredient| %>
+                 <li><%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+                     <% end %>
               <% if logged_in? %>
                 <li class='divider'></li>
                 <li>
                   <%= link_to(new_ingredient_path) do %>
                     New Method
-                    <% end %>
+                     <% end %>
                 </li>
-              <% end %>
-          </ul>
-        </li>
+                     <% end %>
+            </ul>
+           </li>
     </ul>
-    <% if logged_in? %>
-      <div class="nav_item">
-        <%= link_to "New Idea", new_idea_path, class: "btn btn-default btn-default pull-right" %>
-      </div>
-      <ul class="nav_log_button">
+                    <% if logged_in? %>
+        <div class="nav_item">
+          <%= link_to "New Idea", new_idea_path, class: "btn btn-default btn-default pull-right" %>
+        </div>
+       <ul class="nav_log_button">
         <li class="dropdown">
           <%= link_to '#', class: "btn btn-default btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>
             <%= current_user.marketername %> <b class="caret"></b>
-          <% end %>
+            <% end %>
           <ul class='dropdown-menu'>
             <li><%= link_to "View Profile", marketer_path(current_user) %></li>
             <li><%= link_to "Edit Profile", edit_marketer_path(current_user) %></li>
@@ -57,11 +57,12 @@
             <li><%= link_to "Logout", logout_path %></li>
           </ul>
         </li>
-      </ul>
-    <% else %>
+        </ul>
+           <% else %>
       <div class="nav_log_button">
-        <%= link_to "Log in", login_path, class: "btn btn-default btn-default pull-right" %>
+        <%= link_to "Log in", login_path, class: "btn btn col-md-1 btn-default pull-right" %>
       </div>
     <% end %>  
+  </div>
   </div>
 </header>
