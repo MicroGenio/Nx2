@@ -22,7 +22,8 @@
             <h4><%= link_to idea.name, idea_path(idea) %></h4>
             <p><%= idea.summary %></p>
             <p>
-                <span class='quiet'><small> <%= time_ago_in_words(idea.created_at) %> ago</small></span>
+                <span class='quiet'><small> created: <%= time_ago_in_words(idea.created_at) %> ago, </small></span>
+                <span class='quiet'><small> updated: <%= time_ago_in_words(idea.created_at) %> ago</small></span>
             </p>
             <div class="pull-right">
         <%= link_to like_idea_path(idea, like: true), method: :post do %>

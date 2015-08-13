@@ -1,5 +1,5 @@
-$navbar-default-bg: #7B9AC9;
-$light-orange: #4E5856;
+$navbar-default-bg: #AEB6CB;
+$light-orange: #AEB6CB;
 $navbar-default-color: $light-orange;
 
 @import "bootstrap-sprockets";
@@ -116,14 +116,14 @@ span.picture {
 }
 
 .navbar-default {
-    background-color: #7E9855;
-    border-color: #B4B6FE;
+    background-color: #AEB6CB;
+    border-color: #FEFDF3;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #B4B6FE;
+    color: #FEFDF3;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #B4B6FE;
+    background-color: #FEFDF3;
     color: #7B9AC9;
 }
 
