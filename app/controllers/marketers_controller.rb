@@ -1,9 +1,9 @@
-class MarketerController < ApplicationController
+class MarketersController < ApplicationController
   before_action :set_marketer, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update]
 
   def index
-    @marketer = Marketer.paginate(page: params[:page], per_page: 3)
+    @marketers = Marketer.paginate(page: params[:page], per_page: 3)
   end
   
   def new

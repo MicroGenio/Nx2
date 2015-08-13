@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :reviews, only: [:new, :create, :show]
   end
   
-  resources :marketer, except: [:new, :destroy]
+  resources :marketers, except: [:new, :destroy]
   
   get '/register', to: 'marketers#new'
   

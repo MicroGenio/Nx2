@@ -5,107 +5,38 @@
         This is the home page for the professional ruby on rails developer course
     </h2>
     
-    <%= link_to "Sign up now!", "", class: "btn btn-lg btn-success" %>
+    <%= link_to "Sign up now!", register_path, class: "btn btn-lg btn-success" %>
 </div>
 <div class= "row">
  <div class="col-lg-4">
   <h3 class="midrow">
-    Music
+    View Ideas as Guest User
   </h3>
-  <h2 class="left">Sick of your favorite artist not coming to your city? Start a poll and gain votes to get your artist to come preform now!</h2>
-  <p><%= link_to "browse Project Listing", "https://askbypoll.com/polls/231/do-you-want-trey-songz-to-come-to-seattle-and-woul", class: "btn btn-warning btin-small" %></p>
+  <h2 class="left">Sick of your favorite artist not coming to your city? Start a poll and gain votes t&nbspo get your artist to come preform now!&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   Browse and view ideas as a guest and sign up later!</h2>
+  <p><%= link_to "Browse Ideas List", ideas_path, class: "btn btn-warning btin-small" %></p>
  </div>
   <div class="col-lg-4">
   <h3 class="midrow">
-    Entrepreneur
+    Sign in to your account
   </h3>
-  <h2 class="left">Have an idea for the next big business? Want to raise money for your business idea? vote for the best new Ideas and help market the crouwdfunder or take invest in the next big idea. Let's change the small business world for ever starting now!</h2>
-  <p><%= link_to "browse Project listing", @ideas, class: "btn btn-warning btin-small" %></p>
+  <h2 class="left">Have an idea for the next big business? Want to raise money for your business idea?&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   Vote for the best new Ideas and help market the crouwdfunder or take invest in the next big idea. Let's change the small business world for ever starting now! Add/update your ideas/create reviews/like-dislike ideas and much more!</h2>
+  <p><%= link_to "log in to your account", login_path, class: "btn btn-warning btin-small" %></p>
  </div>
   <div class="col-lg-4">
   <h3 class="midrow">
-    Sports
+    View Marketers as Guest User
   </h3>
-  <h2 class="left">Want to Work in Sports Adversting, Broadcasting or Marketing but dont know where to start? Support local entrupuners and become a part of a sports based Startup! Help raise money, become and investor, get training, get a job in the Sport Media Indestry now!</h2>
-  <p><%= link_to "browse Project Listing", "https://drive.google.com/open?id=0B-mdD0nj4WKkanpZTUxUaVRDMlU", class: "btn btn-warning btin-small" %></p>
+  <h2 class="left">Want to Work in Sports Adversting, Broadcasting or Marketing but dont know where to start? Support local entrupuners and become a part of a sports based Startup! Help raise money, become and investor, get training, get a job in the Sport Media Indestry now!
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  Browse and view ideas as a guest and Sign up later!</h2>
+  
+  <p><%= link_to "Browse Marketers List", marketers_path , class: "btn btn-warning btin-small" %></p>
  </div>
            
 </div> 
- <div class="container">
-    <div class="row">
-      <ul class="thumbnails list-unstyled">
-        <li class="col-md-4">
-          <div class="thumbnail" style="padding: 0">
-            <div style="padding:4px">
-              <a href="http://s1045.photobucket.com/user/Russell_Powers/media/Untitled-2_zpssa57hbts.png.html" target="_blank"><img src="http://i1045.photobucket.com/albums/b457/Russell_Powers/Untitled-2_zpssa57hbts.png" border="0" alt=" photo Untitled-2_zpssa57hbts.png"/></a>
-            </div>
-            <div class="caption">
-              <h2>Project A</h2>
-              <p>My project description</p>
-              <p><i class="icon icon-map-marker"></i> Place, Country</p>
-            </div>
-            <div class="modal-footer" style="text-align: left">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                    <span class="sr-only">60% Complete</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4"><b>60%</b><br/><small>FUNDED</small></div>
-                <div class="col-md-4"><b>$400</b><br/><small>PLEDGED</small></div>
-                <div class="col-md-4"><b>18</b><br/><small>DAYS</small></div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="col-md-4">
-          <div class="thumbnail" style="padding: 0">
-            <div style="padding:4px">
-             <a href="http://s1045.photobucket.com/user/Russell_Powers/media/a164329a-7998-45e4-92b2-47686a91de44_zpsorhyraor.jpg.html" target="_blank"><img src="http://i1045.photobucket.com/albums/b457/Russell_Powers/a164329a-7998-45e4-92b2-47686a91de44_zpsorhyraor.jpg" border="0" alt=" photo a164329a-7998-45e4-92b2-47686a91de44_zpsorhyraor.jpg"/></a>
-            </div>
-            <div class="caption">
-              <h2>Project B</h2>
-              <p>My project description</p>
-              <p><i class="icon icon-map-marker"></i> Place, Country</p>
-            </div>
-            <div class="modal-footer" style="text-align: left">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                    <span class="sr-only">60% Complete</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4"><b>250%</b><br/><small>FUNDED</small></div>
-                <div class="col-md-4"><b>$50000</b><br/><small>PLEDGED</small></div>
-                <div class="col-md-4"><b>FUNDED</b><br/><small>AUG 5</small></div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="col-md-4">
-        <div class="thumbnail" style="padding: 0">
-          <div style="padding:4px">
-            <a href="http://s1045.photobucket.com/user/Russell_Powers/media/Capture_zps38kf7xc1.png.html" target="_blank"><img src="http://i1045.photobucket.com/albums/b457/Russell_Powers/Capture_zps38kf7xc1.png" border="0" alt=" photo Capture_zps38kf7xc1.png"/></a>
-          </div>
-          <div class="caption">
-            <h2>Project C</h2>
-            <p>My project description</p>
-            <p><i class="icon icon-map-marker"></i> Place, Country</p>
-          </div>
-          <div class="modal-footer" style="text-align: left">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-                    <span class="sr-only">60% Complete</span>
-                </div>
-              </div>
-            <div class="row">
-              <div class="col-md-4"><b>30%</b><br/><small>FUNDED</small></div>
-              <div class="col-md-4"><b>$1000</b><br/><small>PLEDGED</small></div>
-              <div class="col-md-4"><b>NOT FUNDED</b><br/><small></small></div>
-            </div>
-          </div>
-        </div>
-      </li>
-      </ul>
-    </div>
-</div>
+ 
