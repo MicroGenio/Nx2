@@ -8,7 +8,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-4 center">
+  <div class-"col-md-4 col-md-offset-4 center">
     <h3><em>Ideas:</em></h3>
     <%= will_paginate @ideas %>
   </div>
@@ -16,20 +16,21 @@
 
 <% @ideas.each do |idea| %>
   <div class="row">
-    <div class="col-md-4 col-md-offset-4 center">
-      <%= link_to gravatar_for(idea, size: 200), idea_path(idea) %>
-      <p>
-       <span class='quiet'><small> created: <%= time_ago_in_words(idea.created_at) %> ago, </small></span>
-        <span class='quiet'><small> updated: <%= time_ago_in_words(idea.updated_at) %> ago</small></span>
-      </p>
-      <div class="pull-right">
-        <%= link_to like_idea_path(idea, like: true), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= idea.thumbs_up_total %>
-        <% end %> &nbsp&nbsp&nbsp&nbsp
-        <%= link_to like_idea_path(idea, like: false), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= idea.thumbs_down_total %>
-        <% end %>
+     <div class="col-lg-6 well col-lg-offset-3">
+        <h4><%= link_to idea.name, idea_path(idea) %></h4>
+        <p><%= idea.summary %></p>
+        <p>
+          <span class='quiet'><small> created: <%= time_ago_in_words(idea.created_at) %> ago, </small></span>
+          <span class='quiet'><small> updated: <%= time_ago_in_words(idea.updated_at) %> ago</small></span>
+        </p>
+        <div class="pull-right">
+          <%= link_to like_idea_path(idea, like: true), method: :post do %>
+            <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= idea.thumbs_up_total %>
+          <% end %> &nbsp&nbsp&nbsp&nbsp
+          <%= link_to like_idea_path(idea, like: false), method: :post do %>
+            <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= idea.thumbs_down_total %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 <% end %>

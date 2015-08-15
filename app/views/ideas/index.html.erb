@@ -1,9 +1,18 @@
-<%= render 'shared/page_title', title: "All ideas" %>
+<%= render 'shared/page_title', title: "All Ideas" %>
 
 <h1>Do You have An Idea that you want to get funded?</h1>
 
 <p> TheMarketHub.com will help you fund and idea, build a following and market your idea out to the world!</p>
 <hr/>
+
+<ul class="nav nav-tabs">
+    <li class='active'>
+      <%= link_to "Ideas", ideas_path %>    
+    </li>
+    <li>
+      <%= link_to "Marketers", marketers_path %>
+    </li>
+</ul>
 
 <%= will_paginate %>
 

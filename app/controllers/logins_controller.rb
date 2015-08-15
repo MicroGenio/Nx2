@@ -7,7 +7,7 @@ class LoginsController < ApplicationController
   def create
     marketer = Marketer.find_by(email: params[:email])
     if marketer && marketer.authenticate(params[:password])
-      session[:chef_id] = marketer.id
+      session[:marketer_id] = marketer.id
       flash[:success] = "You are logged in"
       redirect_to ideas_path
     else
@@ -17,7 +17,7 @@ class LoginsController < ApplicationController
   end
 
   def destroy
-    session[:chef_id] = nil
+    session[:marketer_id] = nil
     flash[:success] = "You have logged out"
     redirect_to root_path
   end

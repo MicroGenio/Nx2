@@ -9,78 +9,118 @@
   </div>
   <div class="col-md-8">
     <% if logged_in? and (@idea.marketer == current_user || current_user.admin?) %>
-      <%= link_to "Edit this idea", edit_idea_path(@idea), class: "btn btn-success pull-right" %>
+      <%= link_to "Edit this idea", edit_idea_path(@idea), class: "btn btn-info pull-right" %>
     <% end %>  
     <% if logged_in? and current_user.admin? %>
     <%= link_to "[Delete idea]", @idea, method: :delete, data: {confirm: "Are you sure you want to delete this idea?"} %>
     <% end %>
     <h3><%= @idea.summary %></h3>
     <div class="show_idea">
-      <%= image_tag(@idea.picture.url, class: "gravatar") if @idea.picture? %>
+      
     </div>
-    <div class="well">
-      <p>
-          <strong>Method:</strong>
+    
+    
+      <p> <li class="col-lg">
+        <div class="thumbnail" style="padding: 4px">
+          <div style="padding:4px">
+            <%= image_tag(@idea.picture.url, class: "gravatar") if @idea.picture? %>
+          </div>
+          <div class="caption">
+            <h2><%= @idea.name %></h2>
+            <p> <%= simple_format(@idea.description) %></p>
+            <p><i class="icon icon-map-marker"></i> Place, Country</p>
+          </div>
+          <div class="modal-footer" style="text-align: left">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                    <span class="sr-only">60% Complete</span>
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-4"><b>30%</b><br/><small>FUNDED</small></div>
+              <div class="col-md-4"><b>$1000</b><br/><small>PLEDGED</small></div>
+              <div class="col-md-4"><b>NOT FUNDED</b><br/><small></small></div>
+              <div class="pull-right">
+              <%= link_to like_idea_path(@idea, like: true), method: :post do %>
+                <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @idea.thumbs_up_total %>
+              <% end %> &nbsp&nbsp
+              <%= link_to like_idea_path(@idea, like: false), method: :post do %>
+                <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @idea.thumbs_down_total %> &nbsp
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </li>
+      </ul>
+    </div>
+          
       </p>
-      <%= simple_format(@idea.description) %>
-      <div class="pull-right">
-        <%= link_to like_idea_path(@idea, like: true), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @idea.thumbs_up_total %>
-        <% end %> &nbsp&nbsp&nbsp&nbsp
-        <%= link_to like_idea_path(@idea, like: false), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @idea.thumbs_down_total %>
-        <% end %>
+
+      
       </div>
     </div>
-  </div>
-</div>
     <p>
-      <h5><b><%= @idea.reviews.count %> Reviews on marketer <%= @idea.marketer.marketername %>'s <%= @idea.name %></b></h5>
-       </p>
-   <% if @idea.reviews.any? %>
+      <h5><b><%= @idea.reviews.count %> Influencers on project: <%= @idea.marketer.marketername %>'s <%= @idea.name %></b></h5>
+      <% if logged_in? %>
+
   <div class="row">
-    <div class="col-md-6 pull-left center">
-      <div class="well">
-        <h2></h2>
+      <div class="col-md-8 pull-right center">
+         <%= render 'shared/errors', obj: @idea %>
         <% @idea.reviews.each do |c| %>
-          <p align= "left">
+          <p align= "center">
             <b>Review:</b>
               <%=h c.body %>
           </p>
-          <p align= "left">
-            <b>Reviewer:</b>
+          <p align= "center">
+            <b>influencer:</b>
             <%=h c.marketer.marketername %>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count"></div>
           </p>
           
           <hr>
         <% end %>
       
       </div>
-    </div>
-  </div>
-<% end %>
-
-
-
-<% if logged_in? %>
-<%= render 'shared/errors', obj: @idea %>
-    <h3>Add a Review</h3>
-  <div class="row">
-    <div class="col-md-6 pull-left center">
-      <div class="well">
-      <%= form_for([@idea, @idea.reviews.build]) do |f| %>
-
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit "Add your review" %>
-  </p>
-<% end %>
+       <h3>Pitch how you can Help the Project be Successful:</h3>
+        <div class="well">
+        <%= form_for([@idea, @idea.reviews.build]) do |f| %>
+  
+    <p>
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit "Add your review" %>
+    </p>
+  <% end %>
+        </div>
       </div>
+      <h5><%= link_to "Return to Ideas Listing", ideas_path, class: "btn btn-info btn-small" %></h5>
     </div>
-  </div>
-<% end %>    
+  <% end %>    
+       </p>
+   <% if @idea.reviews.any? %>
 
-<h5><%= link_to "Return to Ideas Listing", ideas_path, class: "btn btn-warning btn-small" %></h5>
+    
+<% end %>
+
+
+
+
+    </div>
+ 
+     
+
+
+
+  </div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1629282974025654";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    

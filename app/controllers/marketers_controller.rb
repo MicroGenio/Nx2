@@ -22,7 +22,7 @@ class MarketersController < ApplicationController
   end
   
   def edit
-    
+    @marketer = Marketer.find(params[:id])
   end
   
   def update
@@ -35,6 +35,7 @@ class MarketersController < ApplicationController
   end
   
   def show
+    @marketer = Marketer.find(params[:id])
     @ideas = @marketer.ideas.paginate(page: params[:page], per_page: 3)
   end
   
