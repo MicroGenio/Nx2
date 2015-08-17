@@ -19,5 +19,3 @@
 # Ignore all Cloud9 and hidden files files
 .c9/
 
-# .gitignore
-/config/initializers/app_environment_variables.rb
